@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+
+This is the production version with concatenated an minified assets.
+
+Please see http://github.com/decadecity/pin_producer for full source.
+
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Pin Producer</title>
+    <script>
+document.getElementsByTagName('html')[0].className += ' js';
+    </script>
+    <link rel="stylesheet" href="css/main.css"/>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Pin Producer</h1>
+      <div data-initialisation="true">
+        <div class="loading">
+          <p>Please wait while the Pin Producer loads everything...</p>
+        </div>
+
+        <div class="warning">
+          <p>Sorry but your browser doesn't support the technologies that the Pin Producer needs in order to run.</p>
+        </div>
+
+        <div class="js-hide">
+          <p>Sorry but the Pin Producer requires JavaScript to be enabled in order to run.</p>
+        </div>
+      </div>
+
+      <div data-application="true"></div>
+
+      <script>
+(function () {
+  var s, c, h = document.getElementsByTagName("head")[0];
+  if ('querySelector' in document && 'addEventListener' in window && 'localStorage' in window) {
+    document.getElementsByTagName('html')[0].className += ' ctm';
+    s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'js/main.js';
+    h.appendChild(s);
+  } else {
+    document.getElementsByTagName('html')[0].className += ' legacy';
+  }
+}());
+    </script>
+  </body>
+</html>
